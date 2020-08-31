@@ -1,0 +1,20 @@
+<%= link_to '寄付する', new_donation_path %>
+
+<h2>寄付情報一覧</h2>
+<ul class="donation-lists">
+  <% @donations.each do |donation| %>
+    <li class="donation-list">
+      <div class="donation-name">
+        <%= donation.user.nickname %>
+      </div>
+
+      <div class="donation-price">
+        <%= donation.price %>
+      </div>
+
+      <div class="donation-prefecture">
+        <%= donation.address.prefecture.name %>
+      </div>
+    </div>
+  <% end %>
+</ul>
